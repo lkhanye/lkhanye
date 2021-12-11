@@ -1,0 +1,179 @@
+#########################################################
+ # sources and inspiration https://www.youtube.com/watch?v=i7xTqr0doTc
+ #Escaping a Hyena Attack 
+"""After a completing your Graduate Studies at Hult International Business
+   School, you and your study mates decide to experience the African
+   Adventure. You chose to fly straight to Zimbabwe becuase it has 
+   the largest game reserve and ofcouse there is the BIG FIVE. """
+#########################################################
+
+import time #Import a module to add a pause
+
+#########################################################
+# Constructing instructions for user 
+#########################################################
+# guesing out how a user might respond
+answer_A = ["A", "a"]
+answer_B = ["B", "b"]
+answer_C = ["C", "c"]
+yes = ["Y", "y", "yes"]
+no = ["N", "n", "no"]
+
+#Picking objects 
+sticks = 0
+tree = 0
+
+required = ("\nUse only A, B, or C\n") #cutting down on duplication
+
+#########################################################
+# Constructing intro_1 and calling it to start the game
+#########################################################
+#the story is broken down into sections starting with "intro"
+
+# Program to print "Hello to Zimbabwe"
+
+print("Welcome to your Zimbabwean African Experience") 
+
+
+
+def intro(): 
+      
+    print("After completing your MBAN program, you go to Hwange National "
+          " Park in Zimbabwe to celebrate by going on game drive " 
+          " and doing a overnight sleep over in the bush to experience "
+          " the African wild," 
+          "you oversleep and everyone forgets and leave you behide,"
+          "you awake to the sounds of laughing Hyenas near your tent,"
+          "You will:")
+    time.sleep(1)
+    print(""" 
+    A. Pick a nearby sticks and stones and throw it at the Hyenas
+    B. Lie down and pretend to be dead
+    C. Run""")
+    choice = input(">>> ") #here is your first choice
+    if choice in answer_A:
+        option_sticks()
+    elif choice in answer_B:
+        print("\nThat's not a clever move, Hyenas prefare you " 
+              " dead anywhere. " 
+              "\n\nYou died!")
+    elif choice in answer_C:
+        option_run()
+    else:
+        print(required)
+        intro()
+#########################################################
+# Adding room_2 and linking it to room_1
+#########################################################        
+def option_sticks():
+    print("\nThe Hyena is stunned, but continues charging towards you "
+             "agian. Will you:")
+    time.sleep(1)
+    print(""" 
+        A. Run
+        B. Throw another sticks
+        C. Run towards a nearby tree and climb""")
+    choice = input(">>> ")
+    if choice in answer_A or choice in answer_B:
+        print("\nHyenas hunt in packs you will need a truckload of sticks "
+                 "and stones to scare them. Another Hyena has come from "
+                 "behind you. \n\nYou died!")
+    elif choice in answer_C:
+        option_climb_tree()
+    else:
+        print (required)
+#########################################################
+# Adding room_3 and linking it to room_2
+#########################################################
+def option_climb_tree():
+    print ("\nAs you run towards the tree you see a knife left by one "
+          "of the campers on the ground. Do you pick up the knife. Y/N?")
+    choice = input(">>> ")
+    if choice in yes:
+        knife = 1 #adds a knife
+    else:
+        knife = 0 
+        print("\nWhat do you do next?")
+        time.sleep(1)
+        print(""" 
+        A. Hide behind the tree
+        B. Fight as hell
+        C. Run""")
+    choice = input(">>> ")
+    if choice in answer_A:
+            print ("\nAre you kidding? Hyenas have a great sense of smell "
+                  "the tree doesnt provide enough cover?.Not sure, but "
+                  "i am going with YES,so ...\n\nYou died!")
+    elif choice in answer_B:
+        if knife > 0:
+            print ("\nAs the Hyena charged towards you, you swiped it "
+                     "with the knife and injured it in the face. "
+                     "\n\nYou survived!")
+        else: #if the user didnt pick the knife
+            print ("\nYou should have picked the knife. You are defenceless. "
+                 "\n\nYou died!")
+    elif choice in answer_C:
+            print ("You run to the nearest thick thony bush but the Hyena "
+                   "has great eye sight.")
+            option_run()
+    else:
+            print (required)
+            option_climb_tree()
+            
+def option_run():
+    print ("\nYou make a quick sprint to the nearest thony bush, but "
+           "you are no match for the Hyena is too fast. You will:")
+    time.sleep(1)
+    print (""" 
+    A. Seek protection in the thorny busy
+    B. Fight as hell
+    C. Look for the nearest tall tree""")
+    choice = input(">>> ")
+    if choice in answer_A:
+        print("The Hyena has thick skin and has spotted you, you are no "
+               "match n\nYou died!")
+    elif choice in answer_B:
+        print("n\The Hyena has one of the most powerful bite force "
+              "in the world you are no match. "
+              "\n\nYou died!")
+    elif choice in answer_C:
+        option_climb_tree()
+    else:
+        print (required)
+        option_run()
+
+def option_climb_tree():
+    print("\nYou run to the nearest tall tree, and the Hyena is still, "
+         "charging at you. Do you climb up the tree? Y/N")
+    choice = input(">>> ")
+    if choice in yes:
+        tree = 1 #adds tree
+    else:
+        tree = 0
+    print ("You have already pissed at yourself and now ready to do No 2. "
+          "the African Hyena is now ready for an American meal.")
+    time.sleep(1)
+    if tree > 0:
+        print("You lucky son of a gun, Hyenas cant climb trees. "
+             "You will need a tissue after this. "
+              " You survived!")
+    else: #if the user did not climb the tree
+        print("\nYou should have climbed the tree. " 
+             "n\nYou died!")
+        
+intro() # This starts the game
+        
+
+             
+                
+        
+            
+    
+        
+        
+      
+            
+            
+        
+    
+    
