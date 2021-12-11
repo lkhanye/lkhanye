@@ -1,0 +1,58 @@
+########################################################
+## i am excited about learning how to do Regression Analysis and Classification 
+## in python code. I created these steps to help remember the basic steps in my new journey
+
+
+#######################################################
+# steps in Regressions Analysis and Classification 
+######################################################
+
+# STEP 1 - SET UP 
+#Setup
+   # Download the first csv /excel file 
+    #Create a Jupyter notebook in the same folder. IMPORTANT STEP 
+
+#STEP 2 - IMPORT DATA 
+
+USE the following code 
+import pandas        as pd
+import numpy         as np
+
+from scipy                   import stats
+from datetime                import datetime
+from sklearn                 import preprocessing
+from sklearn.model_selection import KFold
+from sklearn.linear_model    import LinearRegression
+import matplotlib.pyplot as plt
+
+
+df = pd.read_csv(insert file path/name )
+df.head()
+
+########################################################
+#pd.read_csv() does the following,
+
+#Import the csv file into a dataframe.
+#Make the first column as its index.
+#Converts the index’s type from “object” to “datetime64[ns]” 
+#########################################################
+
+#STEP 3 - EXPLORING THE DATASET 
+
+#Lets first visualize the data by plotting it with pandas 
+
+df.plot(figsize=(18,5))
+
+# check if there is any missing data 
+
+df.isnull().values.any()
+
+# check if there any anomalies in the data 'outliers' (remember — always be suspicious of the data and never make any assumptions) by running the following code,
+
+df.hist()
+
+#####################################################################
+Conclusion
+In this post, we learned the basics of exploring a dataset and preparing it to fit to a regression model.
+We assessed its performance, detected its shortcomings. 
+######################################################################
